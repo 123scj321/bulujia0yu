@@ -1,0 +1,30 @@
+<!--pages/server/authority-first/index.wxml-->
+ <view class='getPhoneAndYanZhengMa'>
+  <view class='getPhoneAndYanZhengMaContainer'>
+      <view class='PYtitle'>
+        <image src="{{imgUrl}}logo.png"></image>
+      </view>
+      <view class='getPhone'>
+        <text class='label'>姓名：</text>
+        <input placeholder='请输入您的姓名' bindchange='nameinput' type="text" value="{{name}}"></input>
+      </view>
+      <view class='getPassword borderTop'>
+        <text class='label'>电话：</text>
+        <input placeholder='请输入您的电话号码' bindchange='phoneinput' type="number" value="{{phone}}"></input>
+      </view>
+      <view class='getYanZhengMa '>
+        <text class='label'>验证码：</text>
+          <input placeholder='请输入验证码' value="{{verificationcode}}" bindblur='verificationinput' ></input>
+          <block wx:if="{{!verificationcodeTest}}">
+            <button class='active' bindtap='sendcode'>获取验证码</button>
+          </block>
+          <block wx:else>
+            <button class='fail'>{{sendtxt}}</button>
+          </block>
+      </view>
+      <view class='getPhoneAndYanZhengMaButton'>
+        
+        <button bindtap='getPhoneLogin' class='activedButton'></button>
+      </view>
+    </view> 
+ </view>

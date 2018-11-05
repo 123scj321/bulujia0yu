@@ -1,0 +1,352 @@
+<!--pages/product-detail/index.wxml-->
+<!-- 头部视频 -->
+<view class='top'>
+  <video src="{{current_question.teacher_video}}" style='display:block' controls bindplay="bindplay" objectFit="fill" id="top_video">
+    <!-- <cover-image src="{{imgUrl}}play_video.png" class='play_video' bindtap='bindplay'>
+    </cover-image> -->
+  </video>
+</view>
+<!-- 详情列表 标题-->
+<view class='{{isScrollTop?"switch-panel-title-fixed":"switch-panel-title"}}'>
+  <view class='switch-panel-title-item {{currentItemId =="0"&&"active"}}' bindtap='selectSwiper' data-listid="0">
+    <text>详情</text>
+    <icon></icon>
+  </view>
+  <view class='switch-panel-title-item {{currentItemId =="1"&&"active"}}' bindtap='selectSwiper' data-listid="1">
+    <text>测验</text>
+    <icon></icon>
+  </view>
+  <view class='switch-panel-title-item {{currentItemId =="2"&&"active"}}' bindtap='selectSwiper' data-listid="2">
+    <text>上传</text>
+    <icon></icon>
+  </view>
+</view>
+<!-- 吸顶器 -->
+<block wx:if="{{isScrollTop}}">
+  <view style='height:80rpx'></view>
+</block>
+<!-- 详情列表 内容 -->
+<view class='detail-container' wx:if='{{currentItemId =="0"}}'>
+  <view class='model-01'>
+    <view class='title'>咘噜视频标题一</view>
+    <view class='subtitle'>300次播放</view>
+    <view class='img-container'>
+      <!-- 未点赞 -->
+      <block wx:if="{{!zan_status}}">
+        <button bindtap='zan_handler'>
+          <image src="{{imgUrl}}zan-01.png"></image>
+        </button>
+      </block>
+      <!-- 已点赞 -->
+      <block wx:if="{{zan_status}}">
+        <button bindtap='close_zan_handler'>
+          <image src="{{imgUrl}}zan-03.png"></image>
+        </button>
+      </block>
+      <!-- 分享图片 -->
+      <button open-type="share" data-type="img">
+        <image src="{{imgUrl}}document.png"></image>
+      </button>
+      <!-- 分享海报 -->
+      <button open-type="share" data-type="poster">
+        <image src="{{imgUrl}}poster.png"></image>
+      </button>
+      <!-- 分享小程序 -->
+      <button open-type="share" plain='true' data-type="code">
+        <image src="{{imgUrl}}share-01.png"></image>
+      </button>
+    </view>
+  </view>
+  <view class='content'>
+    这里是视频详情及考核介绍这里是视频详情及考核
+    介绍，这里是视频详情及考核介绍这里是视频详情及考
+    核介绍，这里是视频详情及考核介绍这里是视频详情及
+    考核介绍，这里是视频详情及考核介绍这里是视频详情
+    及考核介绍。
+  </view>
+  <view class='catalog'>
+    <view class='title'>
+      目录
+    </view>
+    <view class='contents'>
+      <block wx:for="{{document_video}}" wx:key="{{document_video}}" wx:index="index">
+        <view class='item'>
+          <view class='left'>
+          <image src="{{imgUrl}}document_video.png" data-video="{{item.videoUrl}}"  bindtap='open_document_video' data-id="{{index}}"></image>
+          </view>
+          <view class='right'>
+            <text>上传视频标题一</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class='detail-botton' bindtap='detail_more'>
+    <image src="{{imgUrl}}checkMore-btn_03.png"></image>
+  </view>
+</view>
+<!-- 列表测试 内容 -->
+<view class='detail-test'  wx:if='{{currentItemId =="1"}}'>
+    <block wx:if="{{current_question.style==0}}">
+      <view class='question-01'>
+        <view class='title'> 
+          <image src='{{imgUrl}}sign-1.png'></image> 
+          {{current_question.question}}
+        </view>
+        <view class='contents'>
+          <block wx:for="{{current_question.context}}" wx:key="{{current_question.context}}" wx:index="index">
+            <view class='item' bindtap='chooseAnswer_handler' data-id="{{item.id}}" data-type="0">
+              <image src="{{item.imgUrl}}"></image>
+              <!-- 未选择按钮 -->
+              <block wx:if="{{!item.status}}">
+              <image src="{{imgUrl}}question.png" ></image>
+              </block>
+              <!-- 已选择按钮 -->
+              <block wx:else>
+              <image src="{{imgUrl}}question-right.png"></image>
+              </block>
+            </view>
+          </block>
+        </view>
+        <view style='height:130rpx;'></view>
+        <view class="picture_button" bindtap='answer_handler' data-id="{{current_question.id}}">
+          <image src='{{imgUrl}}log-button-01.png'></image>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{current_question.style==1}}">
+    <view class='question-02'>
+      <view class='title'><image src='{{imgUrl}}sign-1.png'></image>{{current_question.question}}</view>
+      <view class='contents'>
+        <block wx:for="{{current_question.context}}" wx:key="{{current_question.context}}" wx:index="index">
+        <view class='item' bindtap='select_voice' data-id="{{item.id}}" data-type="0">
+          <view class='voice'>
+            <image src="{{imgUrl}}yuyin-bg.png"></image>
+            <!--语音 默认样式 -->
+            <block wx:if="{{!item.is_play}}">
+              <view class='voice-context' bindtap='playVoice' data-id="{{item.id}}" data-url="{{item.videoUrl}}">
+                <image src="{{imgUrl}}yuyin.png" class='yuyin-img'></image>
+                <text>50</text>
+                <image src="{{imgUrl}}seconds-img.png" class='seconds-img'></image>
+              </view>
+            </block>
+            <!-- 语音播放样式 -->
+            <block wx:if="{{item.is_play}}">
+              <view class='voice-context'>
+                <image src="{{imgUrl}}yunyin-animation.gif" class='yuyin-img'></image>
+                <text>50</text>
+                <image src="{{imgUrl}}seconds-img.png" class='seconds-img'></image>
+              </view>
+            </block>
+          </view>
+          <!-- 未选择按钮 -->
+          <block wx:if="{{!item.status}}">
+          <image src="{{imgUrl}}question.png" ></image>
+          </block>
+          <!-- 已选择按钮 -->
+          <block wx:else>
+          <image src="{{imgUrl}}question-right.png"></image>
+          </block>
+        </view>
+        </block>
+      </view>
+      <view style='height:130rpx;'></view>
+      <view class="picture_button" bindtap='audio_answer_handler' data-id="{{current_question.id}}">
+        <image src='{{imgUrl}}log-button-01.png'></image>
+      </view>
+    </view>
+    </block>
+    <block wx:if="{{current_question.style==2}}">
+    <view class='question-03'>
+      <view class='title'><image src='{{imgUrl}}sign-1.png'></image>请按住语音按钮读出下列字。</view>
+      <view class='contents'>
+        <view class='text'>
+          这里是内容这里是内容这里是内容这里是内容这
+          里是内容这里是内容，这里是内容这里是内容这里
+          是内容这里是内容这里是内容。
+        </view>
+      </view>
+      <button bindtouchstart='voice_start' bindtouchend='voice_stop' data-id="{{current_question.id}}" class='voice_play'>
+        <block  wx:if="{{current_question.context[0].voice_status===false}}">
+          <image src="{{imgUrl}}get-yuyin.png"></image>
+        </block>
+        <block  wx:if="{{current_question.context[0].voice_status===true}}">
+          <image src="{{imgUrl}}voice_animation.gif" class='voice_play_img'></image>
+        </block>
+      </button>
+    </view>
+    </block>
+</view>
+<!-- 上传详情 内容 -->
+<view class='resume'   wx:if='{{currentItemId =="2"}}'>
+  <view class='list-container'>
+    <block wx:for="{{upload}}">
+    <view class='list-item-container'> 
+      <block wx:if="{{item.type==0}}">
+      <view class='list-item'>
+        <view class='tops'>
+          <view class='label'>
+            <text>{{item.name}}</text>
+            <text>2018.01.10</text>
+          </view>
+          <view class='context'>
+            <view class='img-container'>
+              <image src="{{imgUrl}}work-01.png"></image>
+              <image src="{{imgUrl}}work-01.png"></image>
+              <image src="{{imgUrl}}work-01.png"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='border-top'></view>
+      </block>
+      <block wx:if="{{item.type==1}}">
+      <view class='list-item'>
+        <view class='tops'>
+          <view class='label'>
+            <text>{{item.name}}</text>
+            <text>2018.01.10</text>
+          </view>
+          <view class='context'>
+            <view class='voice'>
+              <image src="{{imgUrl}}yuyin-bg.png"></image>
+              <!--语音 默认样式 -->
+              <block wx:if="{{!item.is_play}}">
+                <view class='voice-context' bindtap='playVoice' data-id="{{item.id}}" data-url="{{item.videoUrl}}">
+                  <image src="{{imgUrl}}yuyin.png" class='yuyin-img'></image>
+                  <text>50</text>
+                  <image src="{{imgUrl}}seconds-img.png" class='seconds-img'></image>
+                </view>
+              </block>
+              <!-- 语音播放样式 -->
+              <block wx:if="{{item.is_play}}">
+                <view class='voice-context'>
+                  <image src="{{imgUrl}}yunyin-animation.gif" class='yuyin-img'></image>
+                  <text>50</text>
+                  <image src="{{imgUrl}}seconds-img.png" class='seconds-img'></image>
+                </view>
+              </block>
+            </view>
+          </view>
+          </view>
+        </view>
+        <view class='border-top'></view>
+        </block>
+        <block wx:if="{{item.type==2}}">
+        <view class='list-item'>
+        <view class='tops'>
+          <view class='label'>
+            <text>{{item.name}}</text>
+            <text>2018.01.10</text>
+          </view>
+          <view class='context'>
+          <view class='video-container'>
+            <video id="myVideo" src="http://video.699pic.com/videos/32/88/18/gkF10iWafM0D1513328818.mp4" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls style='width:250rpx;height:150rpx;'></video>
+          </view>
+          </view>
+        </view>
+      </view>
+      <view class='border-top'></view>
+        </block>
+    </view>
+    </block>
+  </view>
+  <view style='height:130rpx;'></view>
+  <view class="picture_button" bindtap='upload_work'>
+    <image src='{{imgUrl}}upload-product.png'></image>
+  </view>
+</view>
+<!-- 上传作品遮罩层 -->
+<view class='upload-mask' wx:if="{{upload_show}}">
+  <view class='contents'>
+    <view class='title'>
+      <view class='label'>
+        <image src="{{imgUrl}}work-name.png" style='width:38rpx;height:40rpx;'></image>
+        <text>输入作品名称</text>
+      </view>
+      <input placeholder='请输入10字以内的作品名称' bindinput='upload_name' value="{{current_upload.name}}"></input>
+    </view>
+    <view class='title'>
+      <view class='label'>
+        <image src="{{imgUrl}}work-choose.png" style='width:48rpx;height:36rpx;'></image>
+        <text>选择需要上传作品</text><text class='upload-info'>（上传文件不得大于100M）</text>
+      </view>
+      <view class='upload-file' wx:if="{{current_upload.type == -1}}">
+        <image src="{{imgUrl}}upload_images.png" bindtap='upload_img' class='upload-img'></image>
+        <image src="{{imgUrl}}upload_voices.png" bindtap='upload_audio' class='upload-img'></image>
+        <image src="{{imgUrl}}upload_audios.png" bindtap='upload_video' class='upload-img'></image>
+      </view>
+      <!-- 图片上传内容 -->
+      <view class='upload-file' wx:if="{{current_upload.type == 0}}">
+        <image src="{{imgUrl}}work-01.png" bindtap='upload_img' class='upload-img'></image>
+        <image src="{{imgUrl}}work-01.png" bindtap='upload_audio' class='upload-img'></image>
+        <image src="{{imgUrl}}work-01.png" bindtap='upload_video' class='upload-img'></image>
+      </view>
+      <!-- 语音上传内容 -->
+      <view class='upload-file' wx:if="{{current_upload.type==1}}">
+        <view class='voice'>
+          <image src="{{imgUrl}}yuyin-bg.png"></image>
+          <!--语音 默认样式 -->
+          <view class='voice-context' bindtap='playVoice' data-id="{{item.id}}" data-url="{{item.videoUrl}}">
+            <image src="{{imgUrl}}yuyin.png" class='yuyin-img'></image>
+            <text>50</text>
+            <image src="{{imgUrl}}seconds-img.png" class='seconds-img'></image>
+          </view>
+        </view>
+      </view>
+      <!-- 视频上传内容 -->
+      <view class='upload-file' wx:if="{{current_upload.type==2}}">
+        <video src="{{current_question.teacher_video}}" style='display:block' controls bindplay="bindplay" objectFit="fill" id="top_video">
+        </video>
+      </view>
+    </view>
+    <view style='height:130rpx;'></view>
+    <view class="picture_button" bindtap='submit_upload'>
+      <image src='{{imgUrl}}log-button.png'></image>
+    </view>
+  </view>
+</view>
+<!-- 通过遮罩层 -->
+<view class='success-mask' wx:if="{{answer_id==1}}" bindtap='close_answar'>
+  <view class='contents'>
+    <view class='success-container'>
+      <view class='image-container'>
+        <image src='{{imgUrl}}star_01.png'></image>
+        <image src='{{imgUrl}}star_01.png'></image>
+        <image src='{{imgUrl}}star_01.png'></image>
+        <image src='{{imgUrl}}star_01.png'></image>
+        <image src='{{imgUrl}}star_01.png'></image>
+      </view>
+      <view class='text-container'>
+        <image src="{{imgUrl}}success-text.png"></image>
+      </view>
+      <view class='button' bindtap='next_images_study'>
+        <button>继续学习</button>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 未通过遮罩层 -->
+<view class='fail-mask' wx:if="{{answer_id==0}}"  bindtap='close_answar'>
+  <view class='contents'>
+    <view class='success-container'>
+      <view class='image-container'>
+        <image src='{{imgUrl}}star_01.png'></image>
+        <image src='{{imgUrl}}star_01.png'></image>
+        <image src='{{imgUrl}}star.png'></image>
+        <image src='{{imgUrl}}star.png'></image>
+        <image src='{{imgUrl}}star.png'></image>
+      </view>
+      <view class='text-container'>
+        <image src="{{imgUrl}}fail-text.png"></image>
+      </view>
+      <view class='button' bindtap='again_answer'>
+        <button>再来一次</button>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 目录视频播放 -->
+<view class="document-video-auto" wx:if="{{document_play.document_play_status}}">
+  <video src="{{document_play.video_url}}" bindtimeupdate="bindtimeupdate" bindended="bindended" bindpause="bindpause" initial-time="{{document_play.videoTime}}"></video>
+</view>

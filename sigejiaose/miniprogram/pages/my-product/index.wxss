@@ -1,0 +1,218 @@
+/* pages/my-product/index.wxss */
+page{
+  background: #cef2f2;
+}
+/* 标题 */
+.main-title{
+  width:700rpx;
+  margin:30rpx auto;
+  font-size:32rpx;
+  color:#0090ec;
+}
+/* 关注列表 */
+.resume{
+  width:100%;
+  
+  margin-top:10rpx;
+}
+.resume .title{
+  width:700rpx;
+  margin:0rpx auto;
+  align-items: center;
+  display: flex;
+  padding-top:20rpx;
+  padding-bottom:20rpx;
+  justify-content: space-between;
+}
+.resume .title text{
+  font-size:32rpx;font-weight: bold;color:#333;
+}
+.resume .title image{
+  width:16rpx;
+  height: 30rpx;
+}
+.resume .list-container{
+  width:100%;
+}
+.resume .list-container .list-item-container{
+  width:100%;
+  /* background: #fff; */
+  margin-bottom: 20rpx;
+}
+.resume .list-container .list-item{
+  width:700rpx;
+  margin:0rpx auto;
+  margin-top:20rpx;
+}
+.resume .list-container .list-item .top{
+  width:700rpx;
+  margin:0rpx auto;
+  align-items: center;
+}
+.resume .list-container .list-item .top .label{
+  width:100%;
+  display: flex;
+  margin:30rpx auto;
+  justify-content: space-between;
+}
+.resume .list-container .list-item .top .label text:first-child{
+  font-size:32rpx;
+  color:#ffa84d;
+  font-weight: bold;
+}
+.resume .list-container .list-item .top .label text:last-child{
+  font-size:26rpx;
+  color:#555555;
+}
+.resume .list-container .list-item .top .context{
+  width:700rpx;
+  margin:0rpx auto;
+}
+.resume .list-container .list-item .top .context .img-container{
+  width:750rpx;
+}
+.resume .list-container .list-item .top .context .img-container image{
+  width:200rpx;
+  height: 200rpx;
+  display: inline-block;
+  margin-right:40rpx;
+  margin-bottom:20rpx;
+  border:4rpx solid #fff;
+} 
+.resume .list-container .list-item .top .context .img-container .video-container{
+  width:250rpx;
+  height: 200rpx;
+  display: inline-block;
+  margin-right:45rpx;
+  margin-bottom:20rpx;
+}
+.resume .list-container .list-item .top .context .img-container .video-container video{
+  width:250rpx;
+  height: 200rpx;
+  display: inline-block;
+  margin-right:45rpx;
+  margin-bottom:20rpx;
+}
+.resume .list-container .list-item .top .context  .voice{
+  margin-bottom:20rpx;
+  width:280rpx;
+  height: 87rpx;
+  position: relative;
+}
+.resume .list-container .list-item .top .context  .voice>image{
+  width:280rpx;
+  height: 87rpx;
+}
+.resume .list-container .list-item .top .context  .voice .voice-context{
+  position: absolute;
+  bottom: 0rpx;
+  width:220rpx;
+  height: 87rpx;
+  display: flex;
+  top:17rpx;
+  left:40rpx;
+}
+.resume .list-container .list-item .top .context  .voice .voice-context .yuyin-img{
+  width:32rpx;
+  height: 46rpx;
+}
+.resume .list-container .list-item .top .context  .voice .voice-context text{
+  display: block;
+  margin-left:34rpx;
+  margin-right: 5rpx;
+  color:#fff;
+  font-size:32rpx;
+}
+.resume .list-container .list-item .top .context  .voice .voice-context .seconds-img{
+  width:9rpx;
+  height: 7rpx;
+  margin-top:9rpx;
+}
+.resume .list-container .list-item .bottom{
+  width:700rpx;
+  display: flex;
+  margin:0rpx auto;
+  margin-bottom:30rpx;
+}
+.resume .list-container .list-item .bottom .left{
+  width:550rpx;
+  display: flex;
+  margin:10rpx auto;
+  align-items: center;
+  font-size:26rpx;
+  color:#555555;
+}
+.resume .list-container .list-item .bottom .left image{
+  width:28rpx;
+  height: 26rpx;
+  margin-right:18rpx;
+}
+.resume .list-container .list-item .bottom .right{
+  width:150rpx;
+  display: flex;
+  justify-content: space-between;
+  margin:10rpx auto;
+}
+.resume .list-container .list-item .bottom .right button{
+  display: inline-block;
+  margin:0;
+  padding:0;
+  line-height: 0rpx;
+  border:none;
+  border-radius: 0rpx;
+  background: none;
+}
+.resume .list-container .list-item .bottom .right button::after{
+  border:none;
+}
+.resume .list-container .list-item .bottom .right button:first-child image{
+  width:35rpx;
+  height: 34rpx;
+} 
+.resume .list-container .list-item .bottom .right button:nth-child(2) image{
+  width:38rpx;
+  height: 34rpx;
+}
+.resume .list-container .list-item .bottom .right button:last-child image{
+  width:43rpx;
+  height: 35rpx;
+} 
+.border-top{
+  width:700rpx;
+  margin:0 auto;
+  border-top:2rpx solid #fff;
+}
+
+/* 目录图片播放 */
+.document-video-auto{
+  width:100%;
+  height: 100%;
+  background: rgba(0 , 0, 0, 0.5);
+  position: fixed;
+  top:0rpx;
+  left:0rpx;
+  z-index:100000;
+}
+.document-video-auto .poster-bg{
+  position: relative;
+  width:580rpx;
+  height: 800rpx;
+  border-radius: 15rpx;
+  background: #fff;
+  top:140rpx;
+  margin:0 auto;
+}
+.document-video-auto .poster-bg .top-bg{
+  position: absolute;
+  top:75rpx;
+  width:360rpx;
+  height: 363rpx;
+  margin-left:110rpx;
+  background: url(http://127.0.0.1:8080/images/code-bg.png);
+  background-size:contain;
+  background-repeat: no-repeat;
+}
+.document-video-auto .poster-bg .top-bg image{
+  width:44rpx;
+  height: 40rpx;
+}

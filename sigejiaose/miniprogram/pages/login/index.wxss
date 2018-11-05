@@ -1,0 +1,148 @@
+/* pages/server/authority-first/index.wxss */
+page{
+  background: #ceeff2;
+}
+.getPhoneAndYanZhengMa{
+  width:700rpx;
+  background: #ceeff2;
+  height: 760rpx;
+  margin:20rpx auto;
+}
+.getPhoneAndYanZhengMaContainer{
+  width:640rpx;
+  margin:0 auto;
+}
+.PYtitle{
+  padding-top:80rpx;
+  /* padding-bottom: 20rpx;  */
+  width:100%;
+  text-align: center;
+  font-size:44rpx;
+  color:#0090ec;
+  line-height: 150rpx;
+  font-family: "pingfang";
+}
+.PYtitle image{
+  width:313rpx;
+  height: 152rpx;
+}
+.getPhone{
+  width:100%;
+  background: #ceeff2;
+  margin-top:60rpx;
+  height:100rpx;
+  line-height: 100rpx;
+  font-size:30rpx;
+  display: flex;
+}
+.getPhone text{
+  width:150rpx;
+}
+.getPhone input{
+  width:320rpx;
+  /* margin:0 auto; */
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.getYanZhengMa{
+  width:100%;
+  background: #ceeff2;
+  height:100rpx;
+  line-height: 100rpx;
+  font-size:30rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2rpx solid #ddd;
+}
+.getYanZhengMa text{
+  width:150rpx;
+}
+.getYanZhengMa input{
+  width:320rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.getYanZhengMa button{
+  width:160rpx;
+  height: 60rpx;
+  border-radius: 8rpx;
+  border:none;
+  font-size:26rpx;
+  line-height: 60rpx;
+  text-align: center;
+  padding:0;
+  margin-right: 25rpx;
+  margin-top:25rpx;
+
+  /* background: linear-gradient(to bottom,#4eb5f6, #0391ec);
+  color:#fff; */
+}
+/* .getYanZhengMa button.active{
+  background: #ddd;
+} */
+.getYanZhengMa button::after{
+  border:none;
+}
+.getPassword{
+  width:100%;
+  background: #ceeff2;
+  height:100rpx;
+  line-height: 100rpx;
+  display: flex;
+  font-size:30rpx;
+  border-bottom: 2rpx solid #ddd;
+}
+.getPassword text{
+  width:150rpx;
+}
+.getPassword input{
+  width:320rpx;
+  /* margin:0 auto; */
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.agreementAndRead{
+  width:100%;
+  height: 140rpx;
+  line-height: 140rpx;
+  font-size:30rpx;
+  color:#888;
+  display: flex;
+}
+.agreementAndRead image{
+  width:34rpx;
+  height: 34rpx;
+  margin-top:53rpx;
+  margin-right: 20rpx;
+}
+.agreementAndRead text{
+  display: inline-block;
+}
+.activedButton{
+ width:100%;
+  margin:20rpx auto;
+  height: 90rpx;
+  line-height: 90rpx;
+  background: url(http://127.0.0.1:8080/images/log-button.png) top center no-repeat;
+  background-size: 100% 100%;
+  color:#fff;
+  margin-top:100rpx;
+}
+.activeButton{
+  width:100%;
+  margin:20rpx auto;
+  height: 90rpx;
+  line-height: 90rpx;
+  color:#fff;
+}
+.borderTop{
+  border-top:2rpx solid #ddd;
+}
+.active{
+background: linear-gradient(to bottom,#ff9e38, #ffc078);
+color:#fff;
+}
+.fail{
+  background: #ddd;
+  color:#fff;
+}

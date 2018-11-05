@@ -1,0 +1,94 @@
+/* pages/company-resume/index.wxss */
+page{
+  background: #cef2f2;
+}
+.about-us-banner{
+  width:100%;
+  height: 300rpx;
+}
+.about-us-banner image{
+  width:100%;
+  height: 300rpx;
+}
+/* 导师简介 */
+.model{
+  width:700rpx;
+  margin:30rpx auto;
+}
+.model .label{
+  margin:30rpx;
+}
+.model .label .title{
+  width:450rpx;
+  margin:10rpx auto;
+  display: flex;
+  justify-content: space-between;
+  font-size:36rpx;
+  color:#ff8b00;
+  align-items: center;
+}
+.model .label .title icon{
+  display: block;
+  width:130rpx;
+  border-top:2rpx solid #ff8b00;
+}
+.model .label .subtitle{
+   width:450rpx;
+   text-align: center;
+   margin:0rpx auto;
+   font-size: 24rpx;
+   color:#ff8b00;
+   font-family: Arial;
+}
+.model .content{
+  width:100%;
+  margin:0 auto;
+}
+.model .content .text{
+  font-size:30rpx;
+  color:#333333;
+  line-height: 50rpx;
+  margin-bottom:30rpx;
+  text-indent: 1.7rem;
+}
+.model content .text view{
+  height: 10rpx;
+}
+.model content .teacher-video{
+  width:670rpx;
+  height: 332rpx;
+  margin:30rpx auto;
+  position: relative;
+}
+.model content .teacher-video>image{
+  width:670rpx;
+  height: 332rpx;
+}
+.model content .teacher-video .video-status{
+  width:216rpx;
+  height: 140rpx;
+  position: absolute;
+  top:50%;
+  left:50%;
+  margin-left:-108rpx;
+  margin-top:-70rpx;
+}
+.model content .teacher-video .video-status image{
+  width:216rpx;
+  height: 140rpx;
+}
+.blue-text{
+  color:#00a0e9;
+}
+.relative-way{
+  width:700rpx;
+  margin:0 auto;
+  display: flex;
+}
+/* 地图 */
+.map{
+  width:700rpx;
+  height: 240rpx;
+  margin:30rpx auto;
+}
+

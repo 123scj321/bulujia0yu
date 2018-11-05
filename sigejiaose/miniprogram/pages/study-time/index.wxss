@@ -1,0 +1,133 @@
+/* pages/server/member-rank/index.wxss */
+page{
+  background: #f1f2f4;
+}
+.user-face-module{
+  overflow: hidden;
+  background: #fff;
+  background-size: 100% 100%;
+  position: relative;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  padding-top:30rpx;
+}
+.user-face-module .title{
+  width:700rpx;
+  margin:0 auto;
+  font-size:32rpx;
+  color:#333333;
+}
+.user-face-module .label{
+  width:700rpx;
+  margin:0 auto;
+  font-size:28rpx;
+  color:#888888;
+  margin-top:60rpx;
+}
+.user-face-module .bar-container{
+  position: relative;
+  width:700rpx;
+  height: 280rpx;
+  display: flex;
+  margin:0 auto;
+  justify-content: space-between;
+  border-bottom:5rpx solid #ff8b00;
+}
+.user-face-module .bar-container .item{
+  position: absolute;
+  bottom:0rpx;
+  width:105rpx;
+  text-align: center;
+  overflow: hidden;
+  color:#888888;
+  font-size:24rpx;
+}
+.user-face-module .bar-container .item text{
+  display: block;
+}
+.user-face-module .bar-container .item icon{
+  display: block;
+  width:45rpx;
+  height: 80rpx;
+  margin:0rpx auto;
+  margin-top:10rpx;
+  background: #ff8b00;
+}
+.user-face-module .bar-container .c1{left:0rpx;}
+.user-face-module .bar-container .c2{left:103rpx;}
+.user-face-module .bar-container .c3{left:206rpx;}
+.user-face-module .bar-container .c4{left:309rpx;}
+.user-face-module .bar-container .c5{left:412rpx;}
+.user-face-module .bar-container .c6{left:515rpx;}
+.user-face-module .bar-container .c7{left:610rpx;}
+.bar-label-container{
+  position: relative;
+  width:700rpx;
+  display: flex;
+  margin:30rpx auto;
+  justify-content: space-between;
+  font-size:24rpx;
+  color:#888888;
+  padding-top:30rpx;
+}
+.bar-label-container .item{
+  position: absolute;
+  bottom:0rpx;
+  width:105rpx;
+  text-align: center;
+  overflow: hidden;
+  color:#888888;
+  font-size:24rpx;
+}
+.bar-label-container .c1{left:0rpx;}
+.bar-label-container .c2{left:103rpx;}
+.bar-label-container .c3{left:206rpx;}
+.bar-label-container .c4{left:309rpx;}
+.bar-label-container .c5{left:412rpx;}
+.bar-label-container .c6{left:515rpx;}
+.bar-label-container .c7{left:610rpx;}
+/* 成长值 */
+.question-container{
+  margin:30rpx auto;
+}
+.teacher-abstract{
+  width:750rpx;
+  display: flex;
+  font-size:30rpx;
+  color:#353535;
+  font-weight: bold;
+  padding-bottom:20rpx;
+}
+.teacher-abstract icon{
+  display: block;
+  width:8rpx;
+  height: 45rpx;
+  background: #e8b468;
+  margin-right: 8rpx;
+  border-radius: 16rpx;
+}
+.main-text{
+  text-indent: 1.5rem;
+  font-size:28rpx;
+  color:#555555;
+  display: flex;
+  margin:30rpx auto;
+}
+
+.text{
+  width:700rpx;
+  margin:20rpx auto;
+  font-size:26rpx;
+  color:#888888;
+  display: flex;
+}
+.text text{
+  display: block;
+  width:30rpx;
+}
+.title{
+  font-size:32rpx;
+  font-weight: 600;
+}
+
+

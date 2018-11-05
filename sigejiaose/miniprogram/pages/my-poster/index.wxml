@@ -1,0 +1,21 @@
+<!--pages/my-poster/index.wxml-->
+<!-- 课程学习 -->
+<block wx:for="{{poster}}" wx:key="{{poster}}" wx:index="index">
+  <view class='list-item'>
+    <view class='label'>
+      <text>2018.01.10分享了海报</text> 
+      <image src="{{imgUrl}}delete-01.png" bindtap='delete_hanlder' data-id="{{index}}"></image>
+    </view>
+    <view class="context">
+      <view class='study-container'>
+        <view class='study-item'>
+          <image class='study_img' src="{{imgUrl}}my-poster.png" bindtap='imgYu' data-src="{{imgUrl}}my-poster.png" data-list="{{imgUrl}}my-poster.png" ></image>
+        </view>
+        <view class='study-item'>
+          <image class='study_img' src="{{imgUrl}}my-poster.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='border-top'></view>
+</block>

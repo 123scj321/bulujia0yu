@@ -1,0 +1,107 @@
+/* pages/tool-box/index.wxss */
+.top{
+  width:100%;
+  text-align: center;
+}
+.top .title{
+  font-size:40rpx;
+  color:#333333;
+  font-weight: bold;
+}
+.top .subtitle{
+  font-size:24rpx;
+  color:#888;
+  margin-top:10rpx;
+}
+/*产品列表 */
+.model{
+  width:100%;
+  margin:30rpx auto;
+}
+.model .label{
+  margin:30rpx auto;
+}
+.model .label .title{
+  width:100%;
+  display: flex;
+  font-size:32rpx;
+  color:#333333;
+  align-items: center;
+}
+.model .label .title icon{
+  display: block;
+  width:8rpx;
+  height: 45rpx;
+  background: #ff8b00;
+  margin-right: 8rpx;
+  border-radius: 16rpx;
+}
+.model .label .title text{
+  margin-left:10rpx;
+}
+.model .label .subtitle{
+   width:450rpx;
+   text-align: center;
+   margin:0rpx auto;
+   font-size: 24rpx;
+   color:#00a1e9;
+   font-family: Arial;
+}
+.model .content{
+  width:700rpx;
+  margin:0 auto;
+}
+.model .content .text{
+  font-size:30rpx;
+  color:#333333;
+  line-height: 50rpx;
+  margin :30rpx auto;
+  text-indent: 1.7rem;
+}
+.model .content .text view{
+  height: 10rpx;
+}
+.model .content .teacher-video{
+  width:670rpx;
+  height: 332rpx;
+  margin:30rpx auto;
+  position: relative;
+}
+.model .content image{
+  width:690rpx;
+  height: 300rpx;
+}
+.model content .teacher-video .video-status{
+  width:216rpx;
+  height: 140rpx;
+  position: absolute;
+  top:50%;
+  left:50%;
+  margin-left:-108rpx;
+  margin-top:-70rpx;
+}
+.model content .teacher-video .video-status image{
+  width:216rpx;
+  height: 140rpx;
+}
+.blue-text{
+  color:#00a1e9;
+}
+/* 微信二维码 */
+.code{
+  width:100%;
+  margin:60rpx auto;
+}
+.code image{
+  width:150rpx;
+  height: 150rpx;
+  margin:20rpx auto;
+  display: block;
+}
+.code text{
+  display: block;
+  text-align: center;
+  width:100%;
+  font-size:24rpx;
+  color:#888;
+}

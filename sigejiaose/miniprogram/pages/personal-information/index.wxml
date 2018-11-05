@@ -1,0 +1,75 @@
+<!--pages/personal-information/index.wxml-->
+<!--pages/personal-information/index.wxml-->
+<!--nick name -->
+<view class='nickname-container'>
+  <view class='avatar'>
+    <image src="{{imgUrl}}avatar.png" class='avatar_img'></image>
+    <!-- <image src="{{imgUrl}}grow-value.png" class='grows_value'></image>
+    <text class='value'>65天</text> -->
+  </view>
+  <view class='nickname'>咘噜</view>
+  <view class='edit'>
+    <text style='display:{{edit_open?"inline-block":"none"}}'>{{sign}}</text>
+    <input value='{{sign}}' style='width:240rpx;display:inline-block;' style='display:{{!edit_open?"inline-block":"none"}}' bindblur='edit_handler' bindinput='get_edit'></input>
+  <image src="{{imgUrl}}pi-fixed.png" bindtap='edit_handler'></image>
+  </view>
+</view>
+<!-- 导航 -->
+<view class='nav-box' >
+  <view class='nav-container'>
+    <form bindsubmit='formSubmit' class='nav-item'  data-url="../my-product/index" data-isTrue="false">
+      <button formType="submit">
+        <image src="{{imgUrl}}my-protect.png" style='width:64rpx;height:64rpx'></image>
+        <text>我的作品</text>
+      </button>
+    </form>
+    <form bindsubmit='formSubmit' class='nav-item'  data-url="../my-poster/index" data-isTrue="true">
+      <button formType="submit">
+        <image src="{{imgUrl}}my-poster-01.png" style='width:66rpx;height:66rpx'></image>
+        <text>我的海报</text>
+      </button>
+    </form>
+    <form bindsubmit='formSubmit' class='nav-item'  data-url="../my-poster/index" data-isTrue="false">
+      <button formType="submit">
+        <image src="{{imgUrl}}my-role.png" style='width:64rpx;height:64rpx'></image>
+        <text>我的角色卡片</text>
+      </button>
+    </form>
+  </view>
+  <view class='nav-container'>
+    <form bindsubmit='formSubmit' class='nav-item'  data-url="../study-time/index" data-isTrue="false">
+      <button formType="submit">
+        <image src="{{imgUrl}}my-study-time.png" style='width:66rpx;height:68rpx'></image>
+        <text>学习时间</text>
+      </button>
+    </form>
+    <form bindsubmit='formSubmit' class='nav-item'  data-url="../study-record/index" data-isTrue="true">
+      <button formType="submit">
+        <image src="{{imgUrl}}my-study-record.png" style='width:69rpx;height:65rpx'></image>
+        <text>学习记录</text>
+      </button>
+    </form>
+  </view>
+</view>
+
+
+<!-- 底部导航 -->
+<view style='height:108rpx;'></view>
+<view class='footer'>
+  <form report-submit='true' class='item' bindtap='footer_handler' data-url="../index/index">
+    <button formType="submit">
+      <image src="{{imgUrl}}home-01.png" style="width:44rpx;height:45rpx"></image>
+      <text>首页</text>
+    </button>
+  </form>
+  <view class='border-left'></view>
+  <form report-submit='true' class='item' bindtap='footer_handler' data-url="../personal-information/index">
+    <button formType="submit">
+      <image src="{{imgUrl}}my.png" style="width:36rpx;height:48rpx;"></image>
+      <text class='active'>我的</text>
+    </button>
+  </form>
+</view>
+
+
+

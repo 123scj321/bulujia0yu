@@ -1,0 +1,23 @@
+{
+  "cloud": true,
+  "pages": [
+    "pages/my-product/index",
+    "pages/index/index",
+    
+    "pages/product-detail/index",
+    "pages/company-resume/index",
+    "pages/my-poster/index",
+    "pages/study-record/index",
+    "pages/study-time/index",
+    "pages/login/index",
+    "pages/tool-box/index",
+    "pages/personal-information/index"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "black"
+  }
+}

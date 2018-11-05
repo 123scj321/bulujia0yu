@@ -1,0 +1,32 @@
+<!--pages/study-record/index.wxml-->
+<!-- 新闻中心 -->
+<view class='resume'>
+  <view class='border-top'></view>
+  <view class='list-container'>
+    <block wx:for="{{news_list}}" wx:key="{{news_list}}" wx:index="index">
+    <view class='list-item'>
+      <view class='left' bindtap='formSubmit' data-url="../product-detail/index">
+        <image src="{{imgUrl}}study_img.png"></image>
+      </view>
+      <view class='right'>
+        <view class='title'>视频标题一</view>
+        <view class='score'>
+          <text>成绩：</text>
+          <block wx:if="{{item.id==1}}">
+            <image src="{{imgUrl}}you.png" style='width:40rpx;height:38rpx;'></image>
+          </block>
+          <block wx:if="{{item.id==2}}">
+            <image src="{{imgUrl}}liang.png" style='width:36rpx;height:39rpx;'></image>
+          </block>
+          <block wx:if="{{item.id==3}}">
+            <image src="{{imgUrl}}cha.png" style='width:36rpx;height:38rpx;'></image>
+          </block>
+        </view>
+        <view class='subtitle'>
+          <text>视频时长：3分12秒</text>
+        </view>
+      </view>
+    </view>
+    </block>
+  </view>
+</view>

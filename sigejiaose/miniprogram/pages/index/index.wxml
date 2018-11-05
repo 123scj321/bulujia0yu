@@ -1,0 +1,90 @@
+<!--pages/index/index.wxml-->
+<!-- 轮播图 -->
+<view class='banner'>
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000" indicator-color="white" indicator-active-color="coral">  
+      <block wx:for="{{movies}}" wx:for-index="index" wx:key="index">  
+        <swiper-item>  
+          <image src="{{item.banner_img}}" class="slide-image" mode="aspectFill"/>  
+        </swiper-item>  
+      </block>  
+    </swiper> 
+</view>
+<!-- 课程学习 -->
+<view class='list-item'>
+  <view class='label'>
+    <text>课程学习</text> 
+  </view>
+  <view class="context">
+    <view class='study-container'>
+      <view class='study-item'>
+        <button open-type="getUserInfo" bindgetuserinfo="buluHandler" data-url="../product-detail/index?open_id=0">
+          <image class='study_img' src="{{imgUrl}}bulu-logo.png"></image>
+          <!-- <text>完成第一视频内容即可开启</text> -->
+        </button>
+      </view>
+      <view class='study-item' data-url="../product-detail/index?open_id=1" bindtap='into_detail' data-id="1" data-status="{{current_role[1].status}}">
+        <image class='study_img' src="{{imgUrl}}lvcao-logo.png"></image>
+        <text wx:if="{{!current_role[1].status}}">完成第一视频内容即可开启</text>
+      </view>
+      <view class='study-item'  data-url="../product-detail/index?open_id=2" bindtap='into_detail' data-id="2" data-status="{{current_role[2].status}}">
+        <image class='study_img' src="{{imgUrl}}boluo-logo.png"></image>
+        <text wx:if="{{!current_role[2].status}}">完成第二视频内容即可开启</text>
+      </view>
+      <view class='study-item' data-url="../product-detail/index?open_id=3" bindtap='into_detail' data-id="3" data-status="{{current_role[3].status}}">
+        <image class='study_img' src="{{imgUrl}}wula-logo.png"></image>
+        <text wx:if="{{!current_role[3].status}}">完成第三视频内容即可开启</text>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 关于我们 -->
+<view class='list-item'>
+  <view class='about-label'>
+    <text>关于我们</text>
+  </view>
+  <view class="contexts">
+    <image class='about-us-img' src="{{imgUrl}}about-us.png"></image>
+    <text class='about-us-text'>北京梦幻空间咘噜教育科技有限公司，是梦幻空间文化传媒旗下儿童戏剧教育品牌。项目针对3-12岁少年儿童，以中国传统文化为根基，故事为主线，运用多种表演形式，以游戏体验、元素训练的方式对孩子的认知、能力情感、艺术、戏剧等方面进行全科融合的综合培养课程。旨在启发孩子的语言表达想象创造、自信表现、团队协作等能力，并最终实现高情商全人的培养目标。
+    </text>
+    <view class='check-button'>
+      <button bindtap='formSubmit' data-url="../company-resume/index">
+        <image src='{{imgUrl}}check-btn.png'></image>
+      </button>
+    </view>
+  </view>
+</view>
+<view class='company-detail'>
+  <text>公司地址：北京市海淀区双清路88号华源世纪商务楼</text>
+  <text>联系方式：010-82527658、82527676</text>
+</view>
+<!-- 礼物盒 -->
+<view class='git-box' bindtap='formSubmit' data-url="../tool-box/index">
+  <view class='bg-gif'>
+    <image src="{{imgUrl}}tool-box.png"></image>
+  </view>
+  <image src="{{imgUrl}}gif-box.png" class='gif-img'></image>
+</view>
+<!-- 底部导航 -->
+<view style='height:100rpx;'></view>
+<view class='footer'>
+  <form report-submit='true' class='item' bindtap='footer_handler' data-url="../index/index">
+    <button formType="submit">
+      <image src="{{imgUrl}}home.png" style="width:44rpx;height:45rpx"></image>
+      <text class='active'>首页</text>
+    </button>
+  </form>
+  <view class='border-left'></view>
+  <form report-submit='true' class='item' bindtap='footer_handler' data-url="../personal-information/index">
+    <button formType="submit">
+      <image src="{{imgUrl}}my-01.png" style="width:36rpx;height:48rpx;"></image>
+      <text>我的</text>
+    </button>
+  </form>
+</view>
+
+<!-- 公司视频播放 -->
+<view class="document-video-auto" wx:if="{{document_play.document_play_status}}">
+  <video src="{{document_play.video_url}}" bindtimeupdate="bindtimeupdate" bindended="bindended" bindpause="bindpause" initial-time="{{document_play.videoTime}}"></video>
+</view>
+
+

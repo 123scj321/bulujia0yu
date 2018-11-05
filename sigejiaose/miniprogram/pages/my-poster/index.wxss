@@ -1,0 +1,118 @@
+/* pages/my-poster/index.wxss */
+/* 关于我们 */
+page{
+  background: #cdf2f1;
+}
+/* 白色的背景 */
+.list-item{
+  background: #cdf2f1;
+}
+/* 企业 服务介绍*/
+.label{
+  width:690rpx;
+  display: flex;
+  font-size:30rpx;
+  color:#333;
+  font-weight: bold;
+  margin:0 auto;
+  justify-content: space-between;
+  padding-top:30rpx;
+  padding-bottom:30rpx;
+  align-items: center;
+}
+.label icon{
+  display: block;
+  width:8rpx;
+  height: 45rpx;
+  background: #0090ec;
+  margin-right: 8rpx;
+  border-radius: 16rpx;
+}
+.label image{
+  width:44rpx;
+  height: 44rpx;
+}
+.context{
+  width:660rpx;
+  margin:0 auto;
+}
+.context .text{
+  font-size:24rpx;
+  color:#a6a6a6;
+  line-height: 38rpx;
+}
+.study-container{
+  width:670rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.study-container .study-item{
+  width:304rpx;
+  height: 364rpx;
+  position: relative;
+  margin-bottom:40rpx;
+  margin-top:0rpx;
+}
+.study-container .study-item:nth-of-type(odd){ 
+  margin-right: 60rpx;
+}
+.study-container .study-item .study_img{
+  width:100%;
+  height: 100%;
+  border:4rpx solid #fff;
+  border-radius: 8rpx;
+}
+.study-container .study-item text{
+  position: absolute;
+  width:100%;
+  padding-top:10rpx;
+  padding-bottom:10rpx;
+  background: rgba(0, 0, 0 ,0.5);
+  font-size:22rpx;
+  color:#fff;
+  text-align: center;
+  bottom:35rpx;
+  left:0rpx;
+}
+.about-us-img{
+  width:690rpx;
+  height: 260rpx;
+  margin:0 auto;
+}
+.about-us-text{
+  width:700rpx;
+  font-size:28rpx;
+  color:#333333;
+  display:flex;
+  margin:10rpx auto;
+  padding-bottom:10rpx;
+  padding-top:10rpx;
+  text-indent:1.7rem;
+  line-height:46rpx;
+}
+.check-button{
+  width:100%;
+  text-align: center;
+  padding-bottom:30rpx;
+  padding-top:30rpx;
+}
+.check-button button{
+  width:200rpx;
+  height: 80rpx;
+  background: none;
+  padding:0rpx;
+}
+.check-button button::after{
+  border:none;
+}
+.check-button button image{
+  width:197rpx;
+  height: 78rpx;
+}
+
+
+.border-top{
+  width:700rpx;
+  margin:0 auto;
+  border-top:2rpx solid #fff;
+}

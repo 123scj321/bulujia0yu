@@ -1,0 +1,117 @@
+<!--pages/my-product/index.wxml-->
+<!-- 关注列表 -->
+<view class='border-top'></view>
+<view class='resume'>
+  <view class='list-container'>
+    <block wx:for="{{product}}" wx:key="{{product}}">
+    <view class='list-item-container'> 
+      <view class='list-item'>
+        <view class='top'>
+          <!-- 图片内容标题 -->
+          <block wx:if="{{item.style==0}}">
+          <view class='label'>
+            <text>图片内容标题</text>
+            <text>2018.01.10</text>
+          </view>
+          </block>
+          <block wx:if="{{item.style==1}}">
+          <!-- 视频标题 -->
+          <view class='label'>
+            <text>视频内容标题</text>
+            <text>2018.01.10</text>
+          </view>
+          </block>
+          <block wx:if="{{item.style==2}}">
+          <!-- 语音标题 -->
+          <view class='label'>
+            <text>语音内容标题</text>
+            <text>2018.01.10</text>
+          </view>
+          </block>
+          <view class='context'>
+            <!-- 图片内容 -->
+            <block wx:if="{{item.style==0}}">
+              <view class='img-container'>
+                <image src="{{imgUrl}}work-01.png" bindtap="imgYu" data-list="{{imgUrl}}work-01.png" data-src="{{imgUrl}}work-01.png" ></image>
+                <image src="{{imgUrl}}work-02.png" bindtap="imgYu" data-list="{{imgUrl}}work-01.png"></image>
+                <image src="{{imgUrl}}work-01.png" bindtap="imgYu" data-list="{{imgUrl}}work-01.png"></image>
+                <image src="{{imgUrl}}work-01.png" bindtap="imgYu" data-list="{{imgUrl}}work-01.png"></image>
+              </view>
+            </block>
+            <!-- 视频 -->
+            <block wx:if="{{item.style==1}}">
+              <view class='video-container'>
+                <video id="myVideo" src="http://video.699pic.com/videos/32/88/18/gkF10iWafM0D1513328818.mp4" danmu-list="{{danmuList}}" controls="{{true}}" style='width:350rpx;height:200rpx;margin-bottom:20rpx' bindplay="bindplayHnadler" bindpause="bindpause" bindended="bindended" direction="90" objectFit="{{cover}}"></video>
+              </view>
+            </block>
+            <!-- 语音 -->
+            <block wx:if="{{item.style==2}}">
+              <view class='voice'>
+                <image src="{{imgUrl}}yuyin-bg.png"></image>
+                <!--语音 默认样式 -->
+                <block wx:if="{{!voice_play}}">
+                  <view class='voice-context' bindtap='playVoice'>
+                    <image src="{{imgUrl}}yuyin.png" class='yuyin-img'></image>
+                    <text>50</text>
+                    <image src="{{imgUrl}}seconds-img.png" class='seconds-img'></image>
+                  </view>
+                </block>
+                <!-- 语音播放样式 -->
+                <block wx:if="{{voice_play}}">
+                  <view class='voice-context' bindtap='stop_voice'>
+                    <image src="{{imgUrl}}yunyin-animation.gif" class='yuyin-img'></image>
+                    <text>50</text>
+                    <image src="{{imgUrl}}seconds-img.png" class='seconds-img'></image>
+                  </view>
+                </block>
+              </view>
+            </block>
+          </view>
+        </view>
+        <view class='bottom'>
+          <block wx:if="{{!item.is_praise}}">
+            <view class='left' bindtap='zan_handler' data-id="{{index}}">
+              <image src="{{imgUrl}}zan.png"></image>
+              <text>{{item.praise}}人觉得很赞</text>
+            </view>
+          </block>
+          <block wx:if="{{item.is_praise}}">
+            <view class='left' bindtap='cancle_zan_handler' data-id="{{index}}">
+              <image src="{{imgUrl}}zan-02.png"></image>
+              <text>{{item.praise}}人觉得很赞</text>
+            </view>
+          </block>
+          <view class='right'>
+            <button open-type='share'>
+              <image src="{{imgUrl}}share.png"></image>
+            </button>
+            <button open-type='share'>
+              <image src="{{imgUrl}}poster.png"></image>
+            </button>
+            <button bindtap='delete_handler' data-index="{{index}}">
+              <image src="{{imgUrl}}delete.png"></image>
+            </button>
+          </view>
+        </view>
+      </view>
+      <view class='border-top'></view>
+    </view>
+    </block>
+  </view>
+</view>
+
+
+
+<!-- 分享海波按钮 -->
+<view class="document-video-auto">
+  <view class='poster-bg'>
+    <view class='top-bg'>
+      <image class='{{imgUrl}}photo.png'></image>
+    </view>
+    <view class='center-bg'></view>
+    <view class='bottom-text'>
+      <text>保存</text>
+      <text>转发</text>
+    </view>
+  </view>
+</view>

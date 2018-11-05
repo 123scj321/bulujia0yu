@@ -1,0 +1,103 @@
+<!--pages/company-resume/index.wxml-->
+<!-- banner 图 -->
+<view class='about-us-banner'>
+  <image src="{{imgUrl}}cp-bg.png"></image>
+</view>
+<!-- 关于我们 -->
+<view class='model'>
+  <view class='label'>
+    <view class='title'>
+      <icon></icon>
+        <text>关于我们</text>
+      <icon></icon>
+    </view>
+    <view class='subtitle'>
+      About Us
+    </view>
+  </view>
+  <view class='content'>
+    <view class='text'>
+      北京梦幻空间咘噜教育科技有限公司，是梦幻空间
+      文化传媒旗下儿童戏剧教育品牌。项目针对3-12
+      岁少年儿童，以中国传统文化为根基，故事为主线
+      运用多种表演形式，以游戏体验、元素训练的方式
+      对孩子的认知、能力、情感、艺术、戏剧等方面进
+      行全科融合的综合培养课程。旨在启发孩子的语言
+      表达、想象创造、自信表现、团队协作等能力，并
+      最终实现高情商全人的培养目标。
+    </view>
+    <view class='text'>
+      表演是孩子与生俱来的天赋，课程融入了舞台剧、
+      手偶剧、皮影戏、哑剧、荧光剧、配音剧等形式，
+      并延展开发出了英文绘本剧、声乐、舞蹈、语言等
+      课程，同时成立了咘噜儿童剧团，为喜爱表演的孩
+      子们提供一个展现自我的舞台。
+    </view>
+    <view class='text'>
+      咘噜戏剧教育聚集了国内大批戏剧专业和教育专业
+      师资，依托五百多场原创儿童剧演出经验，经过潜
+      心教研与一线教学的融会贯通，最终形成适合亚洲
+      儿童学习的戏剧表演课程体系。同时也与韩国、欧
+      洲和美国等地的戏剧教育机构建立联系，为儿童戏
+      剧表演提供更多的探索契机，让每一位孩子在戏剧
+      教育的过程中快乐成长！
+    </view>
+    <view class='text'>
+      我司将面向全国寻找招商加盟伙伴，欢迎各位志同
+      道合之人加入咘噜戏剧教育的大家庭。
+    </view>
+  </view>
+</view>
+<!-- 教育理念 -->
+<view class='model'>
+  <view class='label'>
+    <view class='title'>
+      <icon></icon>
+        <text>教育理念</text>
+      <icon></icon>
+    </view>
+    <view class='subtitle'>
+      Educational Idea
+    </view>
+  </view>
+  <view class='content'>
+    <view class='text'>
+      我们秉着建立自信、认识自我、自然表达、想象创
+      造、交流分享、合作意识、发自内心的理念，教育
+      好每一位适龄儿童。
+    </view>
+  </view>
+</view>
+<!-- 联系方式 -->
+<view class='model'>
+  <view class='label'>
+    <view class='title'>
+      <icon></icon>
+        <text>联系方式</text>
+      <icon></icon>
+    </view>
+    <view class='subtitle'>
+      Contact Information
+    </view>
+  </view>
+  <view class='content'>
+    <view class='map'>
+      <map latitude='{{latitude}}' longitude='{{longitude}}' class='map' bindtap='openMap'></map>
+    </view>
+    <view class='text' style='text-indent: 0rem;'>
+      <view>企业地址：北京市海淀区双清路88号华源世纪商务
+      楼(清华大学东门斜对面、清华科技园【搜狐、网易
+      大厦】旁）</view>
+      <view>联系人：梦幻空间市场部</view>
+      <view class='relative-way'>联系方式： 
+        <view class='blue-text' bindtap='callPhoneHandler' data-phone="010-82527658">
+          010-82527658、
+        </view>
+        <view class='blue-text' bindtap='callPhoneHandler' data-phone="82527676">
+          82527676
+         </view>
+      </view>
+    </view>
+  </view>
+</view>
+
